@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+
+<BorderPane fx:id="borderPane"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="400.0" prefWidth="600.0"
+            fx:controller="no.ntnu.oahjellj.idatt2001.assignment3.Controller.MainController">
+    <top>
+        <Label text="this is the top"></Label>
+    </top>
+    <center>
+        <AnchorPane fx:id="contentPane">
+            <Label text="content goes here"></Label>
+        </AnchorPane>
+    </center>
+    <bottom>
+        <Label text="this is the bottom"></Label>
+    </bottom>
+</BorderPane>

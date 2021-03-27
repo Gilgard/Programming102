@@ -14,7 +14,7 @@ public class MainController {
 
     @FXML
     private void initialize() throws IOException {
-        Parent root = FXMLLoader.load(App.class.getResource("view/TodoListView.fxml"));
+        Parent root = FXMLLoader.load(App.class.getResource("view/CardDisplayView.fxml"));
         borderPane.setCenter(root);
     }
 }
