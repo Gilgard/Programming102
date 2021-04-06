@@ -8,12 +8,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 
-
 /**
  * JavaFX App
  */
 public class App extends Application {
-    private static final String TITLE = "CARDGAME";
+    private static final String TITLE = "CARD GAME";
 
     public static void main(String[] args) {
         launch(args);
