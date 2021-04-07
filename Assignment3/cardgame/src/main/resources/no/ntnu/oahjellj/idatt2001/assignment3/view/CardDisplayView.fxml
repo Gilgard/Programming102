@@ -9,31 +9,25 @@
       xmlns:fx="http://javafx.com/fxml"
       prefHeight="400.0" prefWidth="600.0"
       fx:controller="no.ntnu.oahjellj.idatt2001.assignment3.controller.CardDisplayController">
-|
-    <ImageView>
-        <image>
-            <Image fx:id="cardImage1"/>
-        </image>
+
+    <ImageView fx:id="cardImage1">
+        <Image url="@../images/defaultWhite.jpg"/>
     </ImageView>
-    <ImageView>
-        <image>
-            <Image fx:id="cardImage2"/>
-        </image>
+
+    <ImageView fx:id="cardImage2">
+        <Image url="@../images/defaultWhite.jpg"/>
     </ImageView>
-    <ImageView>
-        <image>
-            <Image fx:id="cardImage3"/>
-        </image>
+
+    <ImageView fx:id="cardImage3">
+        <Image url="@../images/defaultWhite.jpg"/>
     </ImageView>
-    <ImageView>
-        <image>
-            <Image fx:id="cardImage4"/>
-        </image>
+
+    <ImageView fx:id="cardImage4">
+        <Image url="@../images/defaultWhite.jpg"/>
     </ImageView>
-    <ImageView>
-        <image>
-            <Image fx:id="cardImage5"/>
-        </image>
+
+    <ImageView fx:id="cardImage5">
+        <Image url="@../images/defaultWhite.jpg"/>
     </ImageView>
 
 </HBox>

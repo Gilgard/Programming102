@@ -2,8 +2,10 @@ package no.ntnu.oahjellj.idatt2001.assignment3.controller;
 
 import java.io.IOException;
 
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import no.ntnu.oahjellj.idatt2001.assignment3.App;
@@ -11,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import no.ntnu.oahjellj.idatt2001.assignment3.model.DeckOfCards;
 import no.ntnu.oahjellj.idatt2001.assignment3.model.Hand;
+import no.ntnu.oahjellj.idatt2001.assignment3.model.PlayingCard;
 
 /**
  *
@@ -18,16 +21,12 @@ import no.ntnu.oahjellj.idatt2001.assignment3.model.Hand;
 public class MainController {
     @FXML
     private BorderPane borderPane;
-
     @FXML
     private Label sumOfFaces;
-
     @FXML
     private Label heartCards;
-
     @FXML
     private Label flush;
-
     @FXML
     private Label spadeQueen;
 
@@ -50,6 +49,7 @@ public class MainController {
      */
     public void onDealHand(ActionEvent actionEvent) {
         hand = deckOfCards.dealHand(5);
+        //TODO: need a listener or something
     }
 
     /**
@@ -61,5 +61,4 @@ public class MainController {
             //TODO: open dialog "no cards dealt yet"
         }
     }
-
 }
