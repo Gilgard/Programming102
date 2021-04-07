@@ -64,7 +64,7 @@ public class Hand {
         return false;
     }
 
-    public boolean hasCards() {
-        return !cards.isEmpty();
+    public boolean isEmpty() {
+        return cards.isEmpty();
     }
 }

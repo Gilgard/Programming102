@@ -57,8 +57,8 @@ public class MainController {
      * @param actionEvent
      */
     public void onCheckHand(ActionEvent actionEvent) {
-        if(!hand.hasCards()) {
-            //TODO: open dialog "no cards dealt yet
+        if(hand.isEmpty()) {
+            //TODO: open dialog "no cards dealt yet"
         }
     }
 
