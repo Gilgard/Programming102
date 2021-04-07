@@ -1,4 +1,4 @@
-package no.ntnu.oahjellj.idatt2001.assignment3.Model;
+package no.ntnu.oahjellj.idatt2001.assignment3.model;
 
 /**
  * Represents a playing card. A playing card has a number (face) between

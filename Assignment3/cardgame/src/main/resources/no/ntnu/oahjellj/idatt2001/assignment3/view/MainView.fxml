@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:id="borderPane"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="400.0" prefWidth="600.0"
+            fx:controller="no.ntnu.oahjellj.idatt2001.assignment3.controller.MainController">
+    <right>
+        <VBox spacing="10">
+            <padding><Insets top="50"/></padding>
+            <Button text="Deal Hand" onAction="#onDealHand"/>
+            <Button text="Check hand" onAction="#onCheckHand"/>
+        </VBox>
+    </right>
+    <bottom>
+        <TilePane hgap="10" vgap="10">
+            <Label text="Sum of faces:" fx:id="sumOfFaces"/>
+            <Label text="Cards of Heart:" fx:id="heartCards"/>
+            <Label text="Flush:" fx:id="flush"/>
+            <Label text="Queen of Spades:" fx:id="spadeQueen"/>
+        </TilePane>
+    </bottom>
+</BorderPane>
