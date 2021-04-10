@@ -1,5 +1,7 @@
 package no.ntnu.oahjellj.idatt2001.assignment3.model;
 
+import java.util.Objects;
+
 /**
  * Represents a playing card. A playing card has a number (face) between
  * 1 and 13, where 1 is called an Ace, 11 = Knight, 12 = Queen and 13 = King.
@@ -21,6 +23,8 @@ public class PlayingCard {
 	 * @param face The face value of the card, an integer between 1 and 13
 	 */
 	public PlayingCard(char suit, int face) {
+		if(suit != 'H' && suit != 'S' && suit != 'D' && suit != 'C') throw new IllegalArgumentException("Suit must be S, H, D or C");
+		if(face < 1 || face > 13) throw new IllegalArgumentException("Face must be between 1 and 13");
 		this.suit = suit;
 		this.face = face;
 	}
@@ -31,7 +35,8 @@ public class PlayingCard {
 	 *
 	 * @return the suit and face of the card as a string
 	 */
-	public String getAsString() {
+	@Override
+	public String toString() {
 		return String.format("%s%s", suit, face);
 	}
 
@@ -51,5 +56,25 @@ public class PlayingCard {
 	 */
 	public int getFace() {
 		return face;
+	}
+
+	/**
+	 * Checks if the given object equals this PlayingCard
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (!(obj instanceof PlayingCard)) return false;
+		PlayingCard playingCard = (PlayingCard) obj;
+		return this.suit == playingCard.getSuit() && this.face == playingCard.getFace();
+	}
+
+	/**
+	 * Makes a unique code for this PlayingCard
+	 * @return hashcode : int
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(suit, face);
 	}
 }
