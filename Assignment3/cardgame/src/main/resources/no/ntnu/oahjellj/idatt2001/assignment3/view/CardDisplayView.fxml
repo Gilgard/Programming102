@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      prefHeight="300.0" prefWidth="500.0"
+      fx:controller="no.ntnu.oahjellj.idatt2001.assignment3.controller.CardDisplayController">
+
+    <ImageView fx:id="cardImageView1"/>
+    <ImageView fx:id="cardImageView2"/>
+    <ImageView fx:id="cardImageView3"/>
+    <ImageView fx:id="cardImageView4"/>
+    <ImageView fx:id="cardImageView5"/>
+
+</HBox>

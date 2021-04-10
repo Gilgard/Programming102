@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<BorderPane fx:id="borderPane"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="400.0" prefWidth="600.0"
+            fx:controller="no.ntnu.oahjellj.idatt2001.assignment3.controller.MainController">
+    <right>
+        <VBox spacing="10">
+            <padding><Insets top="50"/></padding>
+            <Button text="Deal Hand" onAction="#onDealHand"/>
+            <Button text="Check hand" onAction="#onCheckHand"/>
+        </VBox>
+    </right>
+    <bottom>
+        <VBox spacing="10">
+            <HBox>
+                <Label text="Sum of faces:" minWidth="100.0"/>
+                <Label fx:id="sumOfFaces" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;"/>
+            </HBox>
+
+            <HBox>
+                <Label text="Cards of Heart:" minWidth="100.0" />
+                <Label fx:id="heartCards" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;"/>
+            </HBox>
+
+            <HBox>
+                <Label text="Flush:" minWidth="100.0" />
+                <Label fx:id="flush" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;"/>
+            </HBox>
+
+            <HBox>
+                <Label text="Queen of Spades:" minWidth="100.0" />
+                <Label fx:id="spadeQueen" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
