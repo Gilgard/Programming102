@@ -4,25 +4,23 @@ import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import javafx.scene.layout.HBox;
+import no.ntnu.oahjellj.idatt2001.assignment3.App;
 import no.ntnu.oahjellj.idatt2001.assignment3.model.Hand;
 
 import java.io.File;
-import java.io.IOException;
+import java.util.Objects;
 
 public class CardDisplayController {
     @FXML
-    private HBox hBox;
+    private ImageView cardImageView1;
     @FXML
-    private ImageView cardImage1;
+    private ImageView cardImageView2;
     @FXML
-    private ImageView cardImage2;
+    private ImageView cardImageView3;
     @FXML
-    private ImageView cardImage3;
+    private ImageView cardImageView4;
     @FXML
-    private ImageView cardImage4;
-    @FXML
-    private ImageView cardImage5;
+    private ImageView cardImageView5;
 
     private ImageView[] cardArray;
     private Hand hand;
@@ -30,11 +28,11 @@ public class CardDisplayController {
     @FXML
     private void initialize() {
         cardArray = new ImageView[5];
-        cardArray[0] = cardImage1;
-        cardArray[1] = cardImage2;
-        cardArray[2] = cardImage3;
-        cardArray[3] = cardImage4;
-        cardArray[4] = cardImage5;
+        cardArray[0] = cardImageView1;
+        cardArray[1] = cardImageView2;
+        cardArray[2] = cardImageView3;
+        cardArray[3] = cardImageView4;
+        cardArray[4] = cardImageView5;
     }
 
     public void setHand(Hand hand) {
@@ -44,8 +42,9 @@ public class CardDisplayController {
 
     private void setImages() {
         for(int i = 0; i < 5; i++) {
-            String location = "images/"+ Character.toLowerCase(hand.getCards().get(i).getSuit()) + hand.getCards().get(i).getFace() + ".png";
-            cardArray[i].setImage(new Image(new File(location).toURI().toString()));
+            String location = "images/" + Character.toLowerCase(hand.getCards().get(i).getSuit()) + hand.getCards().get(i).getFace() + ".png";
+            Image image = new Image(Objects.requireNonNull(App.class.getResource(location)).toExternalForm());
+            cardArray[i].setImage(image);
         }
     }
 }

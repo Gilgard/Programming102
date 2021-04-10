@@ -2,18 +2,19 @@ package no.ntnu.oahjellj.idatt2001.assignment3.controller;
 
 import java.io.IOException;
 
-import javafx.collections.ListChangeListener;
+import no.ntnu.oahjellj.idatt2001.assignment3.App;
+import no.ntnu.oahjellj.idatt2001.assignment3.model.DeckOfCards;
+import no.ntnu.oahjellj.idatt2001.assignment3.model.Hand;
+
 import javafx.event.ActionEvent;
+
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import no.ntnu.oahjellj.idatt2001.assignment3.App;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import no.ntnu.oahjellj.idatt2001.assignment3.model.DeckOfCards;
-import no.ntnu.oahjellj.idatt2001.assignment3.model.Hand;
-import no.ntnu.oahjellj.idatt2001.assignment3.model.PlayingCard;
 
 /**
  *
@@ -31,7 +32,8 @@ public class MainController {
     private Label spadeQueen;
 
     private Hand hand = new Hand();
-    private DeckOfCards deckOfCards = new DeckOfCards();
+    private final DeckOfCards deckOfCards = new DeckOfCards();
+    private CardDisplayController cardDisplayController;
 
     /**
      *
@@ -39,17 +41,19 @@ public class MainController {
      */
     @FXML
     private void initialize() throws IOException {
-        Parent root = FXMLLoader.load(App.class.getResource("view/CardDisplayView.fxml"));
-        borderPane.setCenter(root);
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view/CardDisplayView.fxml"));
+        Parent parent = fxmlLoader.load();
+        cardDisplayController = fxmlLoader.getController();
+        borderPane.setCenter(parent);
     }
 
     /**
      *
      * @param actionEvent
      */
-    public void onDealHand(ActionEvent actionEvent) {
+    public void onDealHand(ActionEvent actionEvent) throws IOException {
         hand = deckOfCards.dealHand(5);
-        //TODO: need a listener or something
+        cardDisplayController.setHand(hand);
     }
 
     /**
@@ -58,7 +62,24 @@ public class MainController {
      */
     public void onCheckHand(ActionEvent actionEvent) {
         if(hand.isEmpty()) {
-            //TODO: open dialog "no cards dealt yet"
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("No hand dealt");
+            alert.setHeaderText("Cannot check hand that is not dealt.");
+            alert.showAndWait();
+        }
+
+        sumOfFaces.setText(hand.sumOfFaces() + "");
+        heartCards.setText(hand.getCardsOfHeart());
+
+        if (hand.isFlush()) {
+            flush.setText("Yes");
+        } else {
+            flush.setText("No");
+        }
+        if (hand.hasQueenOfSpades()) {
+            spadeQueen.setText("Yes");
+        } else {
+            spadeQueen.setText("No");
         }
     }
 }
