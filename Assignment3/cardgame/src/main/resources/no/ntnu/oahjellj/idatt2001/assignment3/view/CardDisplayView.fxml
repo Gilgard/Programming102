@@ -2,32 +2,16 @@
 
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 
-<HBox fx:id="hBox"
-      xmlns="http://javafx.com/javafx"
+<HBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       prefHeight="400.0" prefWidth="600.0"
       fx:controller="no.ntnu.oahjellj.idatt2001.assignment3.controller.CardDisplayController">
 
-    <ImageView fx:id="cardImage1">
-        <Image url="@../images/defaultWhite.jpg"/>
-    </ImageView>
-
-    <ImageView fx:id="cardImage2">
-        <Image url="@../images/defaultWhite.jpg"/>
-    </ImageView>
-
-    <ImageView fx:id="cardImage3">
-        <Image url="@../images/defaultWhite.jpg"/>
-    </ImageView>
-
-    <ImageView fx:id="cardImage4">
-        <Image url="@../images/defaultWhite.jpg"/>
-    </ImageView>
-
-    <ImageView fx:id="cardImage5">
-        <Image url="@../images/defaultWhite.jpg"/>
-    </ImageView>
+    <ImageView fx:id="cardImageView1"/>
+    <ImageView fx:id="cardImageView2"/>
+    <ImageView fx:id="cardImageView3"/>
+    <ImageView fx:id="cardImageView4"/>
+    <ImageView fx:id="cardImageView5"/>
 
 </HBox>
