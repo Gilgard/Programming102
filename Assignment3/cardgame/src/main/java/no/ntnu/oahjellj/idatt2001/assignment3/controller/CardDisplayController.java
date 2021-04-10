@@ -7,9 +7,11 @@ import javafx.scene.image.ImageView;
 import no.ntnu.oahjellj.idatt2001.assignment3.App;
 import no.ntnu.oahjellj.idatt2001.assignment3.model.Hand;
 
-import java.io.File;
 import java.util.Objects;
 
+/**
+ * Controller for window showing images of cards
+ */
 public class CardDisplayController {
     @FXML
     private ImageView cardImageView1;
@@ -35,12 +37,17 @@ public class CardDisplayController {
         cardArray[4] = cardImageView5;
     }
 
+    /**
+     * Sets the given hand
+     **/
     public void setHand(Hand hand) {
         this.hand = hand;
-        setImages();
     }
 
-    private void setImages() {
+    /**
+     * Updates the ImageViews to the current hand
+     */
+    public void setImages() {
         for(int i = 0; i < 5; i++) {
             String location = "images/" + Character.toLowerCase(hand.getCards().get(i).getSuit()) + hand.getCards().get(i).getFace() + ".png";
             Image image = new Image(Objects.requireNonNull(App.class.getResource(location)).toExternalForm());
