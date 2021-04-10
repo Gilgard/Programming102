@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 
 /**
- * JavaFX App
+ * MainClass
  */
 public class App extends Application {
     private static final String TITLE = "CARD GAME";
