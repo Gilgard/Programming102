@@ -6,8 +6,6 @@ import no.ntnu.oahjellj.idatt2001.assignment3.App;
 import no.ntnu.oahjellj.idatt2001.assignment3.model.DeckOfCards;
 import no.ntnu.oahjellj.idatt2001.assignment3.model.Hand;
 
-import javafx.event.ActionEvent;
-
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -17,7 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
 /**
- *
+ * Controller for the MainView
  */
 public class MainController {
     @FXML
@@ -36,8 +34,8 @@ public class MainController {
     private CardDisplayController cardDisplayController;
 
     /**
-     *
-     * @throws IOException
+     * Initializes the fields and loads the CardDisplayView
+     * @throws IOException if CardDisplayView does not load
      */
     @FXML
     private void initialize() throws IOException {
@@ -48,19 +46,18 @@ public class MainController {
     }
 
     /**
-     *
-     * @param actionEvent
+     * Deals the hand and updates the images
      */
-    public void onDealHand(ActionEvent actionEvent) throws IOException {
+    public void onDealHand() {
         hand = deckOfCards.dealHand(5);
         cardDisplayController.setHand(hand);
+        cardDisplayController.setImages();
     }
 
     /**
-     *
-     * @param actionEvent
+     * Checks the hand and updates all text fields
      */
-    public void onCheckHand(ActionEvent actionEvent) {
+    public void onCheckHand() {
         if(hand.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("No hand dealt");
