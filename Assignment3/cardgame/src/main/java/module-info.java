@@ -1,4 +1,4 @@
-module cardgame {
+module CardGame {
     requires javafx.controls;
     requires javafx.fxml;
 

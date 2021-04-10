@@ -34,6 +34,18 @@
             <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.testfx</groupId>
+            <artifactId>testfx-core</artifactId>
+            <version>4.0.16-alpha</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testfx</groupId>
+            <artifactId>testfx-junit5</artifactId>
+            <version>4.0.16-alpha</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -51,10 +63,25 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.5</version>
                 <configuration>
-                     <mainClass>no.ntnu.oahjellj.idatt2001.assignment3.App</mainClass>
+                     <mainClass>CardGame/no.ntnu.oahjellj.idatt2001.assignment3.App</mainClass>
                  </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <argLine>
+                        <!-- Required argument for TestFX compatibility with OpenJFX -->
+                        <!-- See https://github.com/TestFX/TestFX/issues/638 -->
+                        --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
+                        <!-- TestFX is not fully modular yet. Unnamed exports are needed. -->
+                        --add-opens CardGame/no.ntnu.oahjellj.idatt2001.assignment3.controller=ALL-UNNAMED
+                        --add-opens CardGame/no.ntnu.oahjellj.idatt2001.assignment3.model=ALL-UNNAMED
+                        --add-exports CardGame/no.ntnu.oahjellj.idatt2001.assignment3=ALL-UNNAMED
+                    </argLine>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
