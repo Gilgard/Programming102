@@ -45,6 +45,13 @@ public class CardDisplayController {
     }
 
     /**
+     * Gets the hand
+     */
+    public Hand getHand() {
+        return hand;
+    }
+
+    /**
      * Updates the ImageViews to the current hand
      */
     public void setImages() {
@@ -53,5 +60,12 @@ public class CardDisplayController {
             Image image = new Image(Objects.requireNonNull(App.class.getResource(location)).toExternalForm());
             cardArray[i].setImage(image);
         }
+    }
+
+    /**
+     * Gets cardArray
+     */
+    public ImageView[] getCardArray() {
+        return cardArray;
     }
 }
