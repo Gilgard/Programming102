@@ -2,6 +2,7 @@ package no.ntnu.oahjellj.idatt2001.assignment3.controller;
 
 import java.io.IOException;
 
+import javafx.scene.control.Button;
 import no.ntnu.oahjellj.idatt2001.assignment3.App;
 import no.ntnu.oahjellj.idatt2001.assignment3.model.DeckOfCards;
 import no.ntnu.oahjellj.idatt2001.assignment3.model.Hand;
@@ -18,6 +19,10 @@ import javafx.fxml.FXMLLoader;
  * Controller for the MainView
  */
 public class MainController {
+    @FXML
+    private Button dealHandButton;
+    @FXML
+    private Button checkHandButton;
     @FXML
     private BorderPane borderPane;
     @FXML
@@ -43,6 +48,14 @@ public class MainController {
         Parent parent = fxmlLoader.load();
         cardDisplayController = fxmlLoader.getController();
         borderPane.setCenter(parent);
+    }
+
+    /**
+     * Get cardDisplayController
+     * @return cardDisplayController
+     */
+    public CardDisplayController getCardDisplayController() {
+        return cardDisplayController;
     }
 
     /**

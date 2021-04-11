@@ -17,8 +17,8 @@
     <right>
         <VBox spacing="10">
             <padding><Insets top="50"/></padding>
-            <Button text="Deal Hand" onAction="#onDealHand"/>
-            <Button text="Check hand" onAction="#onCheckHand"/>
+            <Button fx:id="dealHandButton" text="Deal Hand" onAction="#onDealHand"/>
+            <Button fx:id="checkHandButton" text="Check hand" onAction="#onCheckHand"/>
         </VBox>
     </right>
     <bottom>
